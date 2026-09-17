@@ -1,0 +1,5 @@
+import { sqliteTable, text, integer, index } from 'drizzle-orm/sqlite-core';
+export const rooms = sqliteTable('rooms', { id:text('id').primaryKey(), code:text('code').notNull().unique(), expires:integer('expires').notNull(), bytes:integer('bytes').notNull().default(0), count:integer('count').notNull().default(0) },t=>[index('rooms_expires').on(t.expires)]);
+export const sessions = sqliteTable('sessions',{token:text('token').primaryKey(),room:text('room').notNull(),owner:integer('owner').notNull().default(0)},t=>[index('sessions_room').on(t.room)]);
+export const items = sqliteTable('items',{id:text('id').primaryKey(),room:text('room').notNull(),name:text('name').notNull(),body:text('body'),size:integer('size').notNull(),created:integer('created').notNull(),kind:text('kind').notNull()},t=>[index('items_room').on(t.room)]);
+export const limits = sqliteTable('limits',{key:text('key').primaryKey(),count:integer('count').notNull(),expires:integer('expires').notNull()},t=>[index('limits_expires').on(t.expires)]);

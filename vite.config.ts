@@ -19,7 +19,7 @@ const localBindingConfig = {
   d1_databases: d1
     ? [
         {
-          binding: d1,
+          binding: DB,
           database_name: "site-creator-d1",
           database_id: SITE_CREATOR_PLACEHOLDER_DATABASE_ID,
         },

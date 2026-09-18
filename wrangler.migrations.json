@@ -1,0 +1,12 @@
+{
+  "name": "relay-database-migrations",
+  "account_id": "54a6867ed27b1e8a31b954fdcdda97ab",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "site-creator-d1",
+      "database_id": "5a24cb02-7105-4f33-957a-4dd0f49b7d68",
+      "migrations_dir": "./drizzle"
+    }
+  ]
+}
